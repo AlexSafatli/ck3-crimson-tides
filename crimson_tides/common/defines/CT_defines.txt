@@ -1,0 +1,254 @@
+NCharacter = {
+  # values for randomly generated characters they'll be set to BASE + random within SPAN
+  MALE_RANDOM_AGE_BASE = 16
+  MALE_RANDOM_AGE_SPAN = 20
+  FEMALE_RANDOM_AGE_BASE = 16
+  FEMALE_RANDOM_AGE_SPAN = 16
+  
+  RANDOM_PERSONALITY_TRAITS_BASE = 3
+  RANDOM_PERSONALITY_TRAITS_SPAN = 0
+  RANDOM_CHARACTER_DIPLOMACY_MIN = 0
+  RANDOM_CHARACTER_DIPLOMACY_MAX = 10
+  RANDOM_CHARACTER_MARTIAL_MIN = 0
+  RANDOM_CHARACTER_MARTIAL_MAX = 10
+  RANDOM_CHARACTER_STEWARDSHIP_MIN = 0
+  RANDOM_CHARACTER_STEWARDSHIP_MAX = 10
+  RANDOM_CHARACTER_INTRIGUE_MIN = 0
+  RANDOM_CHARACTER_INTRIGUE_MAX = 10
+  RANDOM_CHARACTER_LEARNING_MIN = 0
+  RANDOM_CHARACTER_LEARNING_MAX = 10
+  RANDOM_CHARACTER_PROWESS_MIN = 0
+  RANDOM_CHARACTER_PROWESS_MAX = 10
+  RANDOM_CHARACTER_MIN_FERTILITY = 0.5
+  RANDOM_CHARACTER_MAX_FERTILITY = 0.6
+
+  RANDOM_CHARACTER_MIN_HEALTH = 4.0
+  RANDOM_CHARACTER_MAX_HEALTH = 5.0
+  RANDOM_CHARACTER_AGE_MIN_HEALTH = 2.5 # This is the minimum starting base health characters get after adjustments for age
+    
+  MAX_STRESS_LEVEL = 3      # The maximum stress level
+  STRESS_PER_LEVEL = 100      # Stress per level
+  STRESS_MONTHLY_CHANGE = 0   # stress is drifiting changing by this value towards character's base stability each month
+  
+  MAX_DREAD = 250
+  BASE_DREAD = 0
+  DREAD_MONTHLY_CHANGE = 0.5    # dread is drifiting changing by this value towards character's base dread value each month
+  BOLD_LEVEL_COWED = 45     # A boldness level above this value will be considered as cowed.
+  BOLD_LEVEL_INTIMIDATED = 20   # A boldness level above this value will be considered as intimidated.
+  
+  MAX_TYRANNY = 1000        # maximum tyranny value a character can have
+  TYRANNY_MONTHLY_CHANGE = -0.25  # tyranny is changing by this value each month
+  
+  BASE_FERTILITY = 0.5
+  BASE_HEALTH = 5.0
+  
+  # experience needed for piety/prestige levels - first/negative level requires 1000, then 350 etc.
+  LEVELS_PIETY = { 1000 1500 2500 4500 8500 }
+  LEVELS_PRESTIGE = { 1000 2000 4000 8000 16000 }
+  # base (starting, neutral) piety/prestige experience
+  BASE_PIETY_EXPERIENCE = 1000
+  BASE_PRESTIGE_EXPERIENCE = 1000
+  # when characters drop a level in piety/prestige, they retain progress toward new level, capped by these values
+  LEVEL_DROP_MAX_RETAINED_PROGRESS_PIETY = 0.5
+  LEVEL_DROP_MAX_RETAINED_PROGRESS_PRESTIGE = 0.5
+  # how many steps for the graphical level changes
+  LEVELS_PIETY_GRAPHICAL_STEP = 1
+  LEVELS_PRESTIGE_GRAPHICAL_STEP = 1
+  # what level is considered to be the "zero" level
+  PIETY_ZERO_LEVEL = 1
+  PRESTIGE_ZERO_LEVEL = 1
+  
+  TODDLER_AGE = 3
+  CHILDHOOD_AGE = 6
+  ADOLESCENCE_AGE = 12
+  MALE_ADULT_AGE = 16
+  FEMALE_ADULT_AGE = 16
+  BETROTHAL_TIMEOUT_AGE = 17
+  MALE_ATTRACTION_CUTOFF_AGE = 65   # After this age, the attraction of traits no longer have any effect
+  FEMALE_ATTRACTION_CUTOFF_AGE = 50 # After this age, the attraction of traits no longer have any effect
+
+  #Health levels and descriptions for every level
+  HEALTH_STATE_LEVELS_VALUES = {
+    0.0
+    1.0
+    3.0
+    5.0
+    7.0
+  }
+  HEALTH_STATE_LEVELS_TEXTS = {
+    "HEALTH_DYING"
+    "HEALTH_NEAR_DEATH"
+    "HEALTH_POOR"
+    "HEALTH_FINE"
+    "HEALTH_GOOD"
+    "HEALTH_EXCELLENT"
+  }
+  
+  #Skill levels and descriptions for every level
+  #Skill levels in loc are defined in 00_basic_values.txt, due to current script limitations. DO NOT UPDATE THESE WITHOUT CHANGING THOSE, and vice versa.
+  SKILL_LEVELS_VALUES = {
+    4 #poor
+    8 #avg
+    12 #good
+    16 #exc
+    68 #nice
+    69 #exc
+  }
+  SKILL_LEVELS_TEXTS = {
+    "SKILL_TERRIBLE"
+    "SKILL_POOR"
+    "SKILL_AVERAGE"
+    "SKILL_GOOD"
+    "SKILL_EXCELLENT"
+    "SKILL_NICE"
+    "SKILL_EXCELLENT"
+  }
+
+  SKILL_MODIFIER_OFFSET = -8  # skill modifiers with offset add this from skill value (see common/modifiers/00_basic_modifiers.txt)
+  
+  #Character window info
+  MAX_RELATIONS_TO_SHOW = 3
+  
+  PRESTIGE_FROM_DYNASTY_ON_MARRIAGE_FACTOR = 0.1
+  PRESTIGE_FROM_DYNASTY_ON_BORN_FACTOR = 0.2
+  MARRIAGE_TIER_DIFF_PRESTIGE_MULT = 100
+  
+  # Multiplied with distance
+  CHARACTER_TRAVEL_TIME = 0.1
+  FOCUS_CHILD_MIN_AGE = 6
+  FOCUS_CHILD_MAX_CHANGES = 1
+  FOCUS_ADULT_COOLDOWN_MONTHS = 60
+  
+  SKILL_SCALE_AGE = 16
+  MAX_HEIR_TO_SHOWN = 4               # How many "Heir To" titles should we show?
+  MAX_PARENT_STEPS_FOR_HEIR = 6           # If we can't find enough descendants, how many steps upwards can we try to search?
+  MIN_HEIR_TO_FIND = 20               # How many heirs should we find before we stop finding more? Note that a higher number here can worsen performance
+  MAX_HEIRS_IN_LINE_OF_SUCCESSION_TOOLTIP = 5     # How many heirs should we show in [LandedTitle.GetLineOfSuccessionDesc]
+
+  MAX_POTENTIAL_SPOUSES = 100000 #Number of entries shown in the marry off-interaction
+  MONTHS_OF_INCOME_AT_START = 18 # Rulers will start with this many months worth of income
+  
+  # Note that when mixing prestige and gold MaA, it'll stop buying more once one reaches the goal
+  # By spending, we mean that it'll try to match the maintenance when unraised and fully reinforced to this portion of their monthly balance
+  # Newly landed rulers (except those that should inherit MaA if they're landed by inheritance) also get MaA based on this
+  MAA_STARTING_EXPENSE_MIN = 0.2 # Rulers at game start will start out spending this much (or a bit more, as it'll overshoot) on men at arms
+  MAA_STARTING_EXPENSE_MAX = 0.35 # Rulers will never start out spending more than this on men at arms. For poor rulers this can mean they end up under MAA_STARTING_EXPENSE_MIN if one more MaA would put them above the max
+  MAA_STARTING_PRESTIGE_EXPENSE_MIN = 0.4 # Rulers at game start will start out spending this much prestige (or a bit more, as it'll overshoot) on men at arms
+  MAA_STARTING_PRESTIGE_EXPENSE_MAX = 0.55 # Rulers will never start out spending more than this much prestige on men at arms. For prestige-poor rulers this can mean they end up under MAA_STARTING_PRESTIGE_EXPENSE_MIN if one more MaA would put them above the max
+  
+  MAXIMUM_DIPLOMATIC_RANGE = 1000
+  MAXIMUM_DIPLOMATIC_RANGE_RESTRICTED = 750 # Used if a game rule with the restricted_diplomatic_range flag is used
+  HOOK_COOLDOWN_DURATION_YEARS = 5  # How many years do strong hooks go on cooldown when used?
+  MAX_COUNTIES_IN_REALM_AS_DUKE = 30            # As a duke or below, the player (but not the AI) will suffer penalties when they go beyond this # of counties in their realm. They can form a kingdom to get the penalties to go away
+  INCOME_PENALTY_PER_COUNTY_ABOVE_LIMIT = 0.05      # For each county above MAX_COUNTIES_IN_REALM_AS_DUKE, you get 10% less income
+
+  FORCED_SUCCESSION_ELECTION_YEARS = 5  # For how long someone is forced to vote with another elector when using the force_vote_in_succession_election interaction
+  
+  MINIMUM_VALUE_FOR_PERSONALITY_DESCRIPTION = 25 # AI personality values ( ai_greed, etc) less than this are ignored when trying to build personality descriptions
+  STRONG_VALUE_FOR_PERSONALITY_DESCRIPTION = 75 # AI personality values with higher values than this are getting the strong version in the personality descriptions
+  MINIMUM_TIER_FOR_REGNAL_NUMBERING = 3 # What tier does someone have to be in order to use regnal numbering? 1 is baron, 5 is emperor
+  
+  PERCENTAGE_HOMOSEXUAL = 5.0       # chance (0-100%) of a randomly created character being homosexual
+  PERCENTAGE_BISEXUAL = 5.0       # chance (0-100%) of a randomly created character being bisexual
+  PERCENTAGE_ASEXUAL = 1.0        # chance (0-100%) of a randomly created character being asexual
+
+  DESIGNATE_HEIR_DISPLAY_COST = 1000  # Prestige cost for designating heir. Actual cost is handled by the scripter interaction 'designate_heir'
+
+  PRETENDERS_TO_TITLE = 5       # Max number of character stored to be the pretenders of a title (includes heir)
+
+  PARTITION_SCORE_PER_OWN_COUNTY = 2    # How much score does a county you own contribute in Partition when selecting a title? The higher this is, the more we encourage getting a title you've already got land in
+  PARTITION_SCORE_PER_OTHER_COUNTY = 1  # How much score does a county another heir owns take away in Partition when selecting a title? The higher this is, the more we encourage getting a title that other heirs don't have land in
+
+  # How many concubines does a ruler of a given tier desire if their faith allows concubines
+  DESIRED_CONCUBINES_PER_TIER = { 0 0 0 1 2 3 }
+  PRESTIGE_LOSS_PER_MISSING_CONCUBINE = 0.1 # Monthly prestige loss per missing (fertile) concubine
+
+  DEBT_MODIFIER_THRESHOLDS = { # When do the debt modifiers kick in, by months of income of debt
+    # Match to the modifier debt_level_i and combat_debt_level_i. Starts with 0
+    0 12 24 36 48 60 120 300 600 1200
+  }
+}
+
+NChildbirth = {
+  MIN_REPRODUCTION_AGE_IN_HISTORY_DB = 12 # If a historical parent is younger than this when their child is born, we log an error
+  MIN_FEMALE_REPRODUCTION_AGE = 16
+  MAX_FEMALE_REPRODUCTION_AGE = 2500
+  MIN_MALE_REPRODUCTION_AGE = 16
+  BASE_NR_OF_CHILDREN_PER_COUPLE = { 1 1 2 3 5 5 } # Based on tier of character or parents; whichever is higher Unlanded, Baron, Count, ..., Emperor
+  CHANCE_OF_LOWERED_CHILD_LIMIT = 0.5 # Chance that the child limit is lowered by 1
+  EXTRA_CHILDREN_FOR_RULERS = 2 # If either character is a ruler, they get extra children
+  CHARACTER_IN_POOL_CHILD_LIMIT = -1  # If in the pool, child limit is modified by this
+  CHILD_BIRTH_TO_PREGNANCY_WAIT = 3
+  MALE_FERTILITY_MULTIPLIER_LIMITS = { 200 100 70 60 50 40 35 } # Ages where fertility multiplier is applied 25 means up to 25, needs to be sorted in descending order
+  MALE_FERTILITY_MULTIPLIER = { 0.5 0.6 0.65 0.75 0.8 0.85 0.9 1.0 } # Multiplier values based on age limits from FERTILITY_MULTIPLIER_LIMITS should have an extra value at the beginning for characters older than first limit
+  FEMALE_FERTILITY_MULTIPLIER_LIMITS = { 200 100 70 45 40 35 30 25 } # Ages where fertility multiplier is applied 25 means up to 25, needs to be sorted in descending order
+  FEMALE_FERTILITY_MULTIPLIER = { 0.33 0.45 0.5 0.55 0.65 0.7 0.9 0.95 1.0 } # Multiplier values based on age limits from FERTILITY_MULTIPLIER_LIMITS should have an extra value at the beginning for characters older than first limit
+  MOTHER_FERTILITY_REDUCTION_PER_PREVIOUS_CHILD = 0.05
+  LOW_FERTILITY = 0.1
+  PRIMARY_SPOUSE_FERTILITY_MULTIPLIER = 1
+  SECONDARY_SPOUSE_FERTILITY_MULTIPLIER = 0.5
+  CONCUBINE_FERTILITY_MULTIPLIER = 0.5
+  NOT_SPOUSE_FERTILITY_MULTIPLIER = 1
+  NON_RULER_FERTILITY_MULTIPLIER = 0.85 # If neither parent is a ruler, resulting fertility gets multiplied by this
+  FERTILITY_CHANCE_MULTIPLIER = 4.75 # Fertility is an average between the father and the mother (if the mother has 0.3 and the father 0.5, the average is 0.4), this number is then multiplied by this multiplier to produce the percentage chance of impregnation. Impregnation is checked every month.
+  MIN_FERTILITY_CHANCE = 1
+  MAX_FERTILITY_CHANCE = 25
+  TWIN_BASE_CHANCE = 0.02
+  TWIN_BONUS_MAX_AGE = 35
+  TWIN_BONUS_MIN_AGE = 25
+  TWIN_BONUS_CHANCE = 0.02
+  TWIN_MOTHER_HAD_TWINS_BONUS = 0.05
+  TWIN_GRANDMOTHER_HAD_TWINS_BONUS = 0.03
+  IDENTICAL_TWIN_CHANCE = 0.013
+  PREGNANCY_DAYS = 280
+  DAYS_TO_PREGNANCY_REVEAL = 60
+  FEMALE_CHANCE = 49
+  NEWBORN_HEALTH_BASE = 4.5
+  NEWBORN_HEALTH_SPAN = 0.5
+  NEWBORN_HEALTH_FEMALE_BONUS = 0.5
+  INHERIT_RECESSIVE_GENE_CHANCE = 0.25  # Probability of a recessive gene being picked as a child's dominant/recessive gene. Only used for portraits
+
+  # Note that the recessive chance is checked only if inheriting it outright fails
+  # Chances are in %. Values above 100% work and can make sense if there's modifiers that might reduce the chance
+  ACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE = 80      # Chance of outright inheriting a genetic trait if both parents have it
+  ACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE = 50    # Chance of outright inheriting a genetic trait if one parent has it, and one is carrying it recessively
+  ACTIVE_TRAIT_CHANCE_ACTIVE_NONE = 25      # Chance of outright inheriting a genetic trait if one parent has it
+  ACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE = 10    # Chance of outright inheriting a genetic trait if both parents are carrying it
+  ACTIVE_TRAIT_CHANCE_INACTIVE_NONE = 2     # Chance of outright inheriting a genetic trait if one parent is carrying it
+  INACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE = 150   # Chance of recessively inheriting a genetic trait if both parents have it. Deliberately over 100% so even if it is a bad trait, the modifiers to inheritance won't let you avoid it
+  INACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE = 100   # Chance of recessively inheriting a genetic trait if one parent has it, and one is carrying it recessively
+  INACTIVE_TRAIT_CHANCE_ACTIVE_NONE = 75        # Chance of recessively inheriting a genetic trait if one parent has it
+  INACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE = 50  # Chance of recessively inheriting a genetic trait if both parents are carrying it
+  INACTIVE_TRAIT_CHANCE_INACTIVE_NONE = 25    # Chance of recessively inheriting a genetic trait if one parent is carrying it
+
+  # General logic for tiered trait inheritance:
+  # 1. Start from highest trait
+  # 2. Calc active chance. Lower tiers ( including inactive ) count as inactive of the tier. Each level down beyond the first multiplies chance by a define
+  # 3. If active, use it; DONE
+  # 4. Otherwise, go down a tier, if inactive pretend 1 more parent has that tier active, otherwise 1 more parent has it inactive.GOTO 2
+  MATCHED_TRAIT_DIFFERENCE_MULT = 0.2       # When trying to inherit a tiered genetic trait, and the other person has one of lower tier, we pretend that means they've  got the higher tier one recessively, and reduce the chance of inheritance by this much per tier further down than 1 the other parent's trait is
+  TIER_TRAIT_REDUCTION_MULT = 0.4         # When going down a tier, add this chance
+  
+  FERTILITY_LEVELS = {
+    0.0
+    0.2
+    0.6
+    0.8 } # The thresholds for each fertility level
+    
+  INBREEDING_ANCESTOR_GENERATIONS = 4           # How many generations are checked for common ancestors of the both parents (including the parents) for the purposes of getting the inbreeding trait and the pure-blooded trait
+  INBRED_CHANCE_ANCESTOR_COUNT_LEVELS = { 15 17 20 22 } # Numbers of common ancestors defining different level of inbreeding chance (one extra level above the max value)
+  INBRED_CHANCE_FACTOR_LEVELS = { 0.33 0.75 1 2 3 }   # Inbreeding chance factors for different level. The final chance in percent is given by the number of common ancestors X corresponding level factor X inbreeding chance modifier
+  PUREBLOODED_CHANCE_ANCESTOR_COUNT_LEVELS = { 20 22 }  # Same as INBRED_CHANCE_ANCESTOR_COUNT_LEVELS, but for the "pure-blooded" trait.
+  PUREBLOODED_CHANCE_FACTOR_LEVELS = { 0 0.15 0.3 }   # Same as INBRED_CHANCE_FACTOR_LEVELS, but for the "pure-blooded" trait.
+  TRAIT_REINFORCEMENT_CHANCE = 0.5            # The chance that a trait that gets inherited from both parents will get reinforced to a higher level.
+
+  EXTRA_CHILDREN_FOR_PLAYERS = 12 # Num of extra children players can have before reaching living child limit
+  EXTRA_CHILDREN_PER_EXTRA_SPOUSE = 2 # Num of extra children per spouse above one before reaching living child limit
+  EXTRA_CHILDREN_PER_EXTRA_CONCUBINE = 2 # Num of extra children per concubine above one before reaching living child limit
+  EXTRA_FERTILITY_FOR_FIRST_CHILD = 0.0 # Extra fertility if the couple are primary spouses and have no children together
+  EXTRA_FERTILITY_FOR_FIRST_RULER_CHILD = 0.3 # Extra fertility if the couple are primary spouses and have no children together, and at least one of them is a ruler
+  DIVINE_MARRIAGE_FERTILITY_MULTIPLIER = 1 # Multiplier if the couple is close or extended family and their faith allows divine marriage
+  CLOSE_FAMILY_FERTILITY_MULTIPLIER = 0.9 # Multiplier if the couple is close family and their faith does not allow divine marriage
+  EXTENDED_FAMILY_FERTILITY_MULTIPLIER = 1 # Multiplier if the couple is extended family and their faith does not allow divine marriage
+  FERTILITY_IN_POOL_MULTIPLIER = 0.25 # Characters in the pool will have their fertility multiplied by this
+}

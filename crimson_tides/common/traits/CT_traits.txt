@@ -1,0 +1,82 @@
+vampirism = {
+  index = 278
+  
+  inherit_chance = 100
+  genetic = yes
+  physical = yes
+
+  birth = 0
+  random_creation = 0
+  
+  diplomacy = 3
+  attraction_opinion = 30
+
+  ai_rationality = dominant_positive_ai_value
+
+  monthly_lifestyle_xp_gain_mult = 0.15
+
+  fertility = -0.75
+  life_expectancy = 250
+  health = 5.0
+  inbreeding_chance = -0.5
+
+  genetic_constraint_all = beauty_3
+  genetic_constraint_men = male_beauty_3
+  genetic_constraint_women = female_beauty_3
+  forced_portrait_age_index = 1 # old_beauty_1
+
+  general_opinion = -15
+  same_opinion = -5
+
+  compatibility = {
+    vampiric_immortality = @pos_compat_high
+  } 
+  
+  dread_baseline_add = 20
+  
+  ruler_designer_cost = 125
+
+  desc = {
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          NOT = { exists = this }
+        }
+        desc = trait_vampirism_desc
+      }
+      desc = trait_vampirism_character_desc
+    }
+  }
+}
+
+vampiric_immortality = {
+  index = 279
+  
+  inherit_chance = 25
+  genetic = yes
+  physical = yes
+  fame = yes
+
+  birth = 0
+  random_creation = 0
+  
+  immortal = yes
+  set_immortal_age = 30
+  
+  dread_baseline_add = 50
+  
+  ruler_designer_cost = 500
+
+  name = trait_vampiric_immortality
+  desc = {
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          NOT = { exists = this }
+        }
+        desc = trait_vampiric_immortality_desc
+      }
+      desc = trait_vampiric_immortality_character_desc
+    }
+  }  
+}

@@ -1,0 +1,16 @@
+has_interesting_portrait_altering_trait_trigger = {
+  OR = {
+    has_trait = scarred
+    has_trait = blind
+    has_trait = beauty_bad
+    has_trait = beauty_good
+    has_trait = hunchbacked
+    has_trait = dwarf
+    has_trait = giant
+    has_trait = spindly
+    has_trait = scaly
+    has_trait = albino
+    has_trait = one_eyed
+    has_trait = vampirism
+  }
+}

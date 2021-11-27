@@ -1,0 +1,13 @@
+game_rule.7121 = {
+  type = character_event
+  hidden = yes
+  
+  trigger = {
+    is_from_ruler_designer = yes
+    has_trait = vampirism
+  }
+
+  immediate = {
+    add_character_flag = immune_to_disease
+  }
+}

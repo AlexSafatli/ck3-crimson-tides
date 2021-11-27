@@ -1,0 +1,9 @@
+﻿l_english:
+ tenet_human_feeding:0 "Human Feeding"
+ tenet_human_feeding_desc:0 "The only way to continue this existence is through the act of draining blood from humans."
+ tenet_supremacy_name:0 "The Masquerade"
+ tenet_supremacy_desc:0 "We shall not reveal our true nature. Doing so would renounce our claims of blood. The Masquerade refers to an organized conspiracy to convince the general public that vampires do not exist."
+ doctrine_parameter_supremacy_resistance_to_conversion:0 "County Conversion Resistance: #P -20%#!"
+ doctrine_parameter_blood_kiss_active:0 "Grants the [sire_interaction|E] character interaction"
+
+ COURT_CHAPLAIN_CONVERSION_SUPREMACY_MODIFIER:2 "[county.GetProvince.GetCounty.GetFaith.GetName] — [GetFaithDoctrine('tenet_supremacy').GetBaseName]" 

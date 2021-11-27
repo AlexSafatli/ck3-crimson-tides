@@ -1,0 +1,6 @@
+﻿l_english:
+ trait_vampirism:0 "Vampirism"
+ trait_vampirism_desc:0 "A member of the undead that requires no food or drink and ages more slowly. A powerful thirst for blood drives this supernatural creature to continue existing."
+ trait_vampirism_character_desc:0 "With [ROOT.GetCharacter.GetHerHis] telltale pale skin, white hair and crimson eyes, [ROOT.GetCharacter.GetFirstNameNoTooltip] clearly possesses supernatural beauty that transcends humanity."
+ trait_vampiric_immortality:0 "Vampiric Immortality"
+ trait_vampiric_immortality_desc:0 "The ultimate achievement of a vampire is to obtain everlasting immortality. [ROOT.GetCharacter.GetFirstNameNoTooltip] will never die of old age."

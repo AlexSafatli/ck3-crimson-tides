@@ -1,0 +1,58 @@
+convert_faith_development_penalty = {
+  value = 0
+  if = {
+    limit = { exists = scope:county }
+    add = court_chaplain_conversion_base
+    add = scope:councillor.court_chaplain_conversion_monthly_increase
+    add = scope:councillor.court_chaplain_conversion_monthly_increase_perk_bonus
+    add = {
+      add = {
+        add = scope:councillor.court_chaplain_progress_percentage
+        multiply = scope:councillor.faith.fervor
+      }
+      subtract = {
+        add = scope:councillor.court_chaplain_progress_percentage
+        multiply = scope:county.faith.fervor
+      }
+      if = {
+        limit = {
+          scope:councillor_liege = { has_perk = religious_icon_perk }
+        }
+        min = 0
+      }
+    }
+    add = scope:councillor.conversion_fundamentalist_faith_bonus
+    add = scope:councillor.conversion_pluralistic_faith_penalty
+    add = scope:councillor.conversion_false_conversion_sanction_resistance
+    add = scope:councillor.conversion_reincarnation_resistance
+    add = scope:councillor.conversion_supremacy_resistance
+    add = scope:councillor.conversion_adaptive_resistance
+    add = scope:councillor.conversion_mendicant_preachers_bonus
+    add = scope:councillor.conversion_communal_identity_bonus
+    add = scope:councillor.conversion_holy_site_jerusalem
+    add = scope:councillor.conversion_holy_site_kerala
+    add = scope:councillor.conversion_holy_site_cordoba
+    add = scope:councillor.conversion_savior_liege
+    add = scope:councillor.conversion_divine_blood_liege
+    add = scope:councillor.conversion_learning_theology
+    multiply = {
+      subtract = scope:county.development_level
+      divide = 100
+      min = -0.9
+    }
+  }
+}
+
+conversion_supremacy_resistance = {
+  value = 0
+  if = {
+    limit = {
+      exists = scope:county
+      scope:county.faith = {
+        has_doctrine = tenet_supremacy
+      }
+    }
+    subtract = court_chaplain_conversion_base_total
+    divide = 0.2
+  }
+}

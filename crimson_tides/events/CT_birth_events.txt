@@ -1,0 +1,16 @@
+namespace = birth
+
+birth.8099 = {
+  type = character_event
+  hidden = yes
+  
+  trigger = {
+    scope:child = {
+      has_trait = vampirism
+    }
+  }
+
+  immediate = {
+    add_character_flag = immune_to_disease
+  }
+}

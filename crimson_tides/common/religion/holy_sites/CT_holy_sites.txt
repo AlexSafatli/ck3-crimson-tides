@@ -1,0 +1,8 @@
+transylvania = {
+  county = c_feher
+
+  character_modifier = {
+    name = holy_site_transylvania_effect_name
+    different_culture_opinion = 10
+  }
+}

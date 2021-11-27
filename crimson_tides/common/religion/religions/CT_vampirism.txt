@@ -1,0 +1,216 @@
+vampirism_religion = {
+  family = rf_pagan
+  graphical_faith = pagan_gfx
+
+  pagan_roots = yes
+
+  #Main Group
+  doctrine = doctrine_temporal_head
+  doctrine = doctrine_gender_equal
+  doctrine = doctrine_pluralism_pluralistic
+  doctrine = doctrine_theocracy_lay_clergy
+
+  #Marriage
+  doctrine = doctrine_concubines
+  doctrine = doctrine_divorce_allowed
+  doctrine = doctrine_bastardry_legitimization
+  doctrine = doctrine_consanguinity_unrestricted
+
+  #Crimes
+  doctrine = doctrine_homosexuality_crime
+  doctrine = doctrine_deviancy_accepted
+  doctrine = doctrine_adultery_men_accepted
+  doctrine = doctrine_adultery_women_accepted
+  doctrine = doctrine_kinslaying_close_kin_crime
+  doctrine = doctrine_witchcraft_accepted
+
+  #Clergy
+  doctrine = doctrine_clerical_function_taxation
+  doctrine = doctrine_clerical_gender_either
+  doctrine = doctrine_clerical_marriage_allowed
+  doctrine = doctrine_clerical_succession_temporal_appointment
+
+  traits = {
+    virtues = {
+      lustful
+      sadistic = 1.5
+      ambitious
+      vampirism
+      arbitrary
+    }
+    sins = {
+      gluttonous
+      craven
+      callous = 0.5
+      generous = 0.5
+      trusting
+    }
+  }
+
+  reserved_male_names = { Cassius Dorian Edgar Lorcan Lucius Tristan Victor Hawthorne Raven Damien Clive Draven Hawk Xander Fenrir Gabriel Idris Orpheus Sebastian Orion Silas Grey Adrian Alaric Caspian Magnus Dante Aris Aldrik Uther }
+  reserved_female_names = { Jett Merle Morgan Morgana Salem Thorne Vega Seren Bella Anastasia Shiva Elizabeth Beth Claire Iris Pandora Seraphina Isolde Maeve Rowena Sebille Velvet Fayre Yvaine Diana Scarlet Bayonetta Morrigan Rosa Freya Selene Tris }
+
+  custom_faith_icons = {
+    custom_faith_1 custom_faith_2 custom_faith_3 custom_faith_4 custom_faith_5 custom_faith_6 custom_faith_7 custom_faith_8 custom_faith_9 custom_faith_10 dualism_custom_1 zoroastrian_custom_1 zoroastrian_custom_2 buddhism_custom_1 buddhism_custom_2 buddhism_custom_3 buddhism_custom_4 taoism_custom_1 yazidi_custom_1 sunni_custom_2 sunni_custom_3 sunni_custom_4 ibadi_custom muhakkima_1 muhakkima_2 muhakkima_4 muhakkima_5 muhakkima_6 judaism_custom_1 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut custom_faith_fp1_yggdrasil
+  }
+
+  localization = {
+    #HighGodName
+    HighGodName = vampirism_high_god_name
+    HighGodNamePossessive = vampirism_high_god_name_possessive
+    HighGodNameSheHe = CHARACTER_SHEHE_HE
+    HighGodHerselfHimself = CHARACTER_HIMSELF
+    HighGodHerHis = CHARACTER_HERHIS_HIS
+    HighGodNameAlternate = vampirism_high_god_alternate
+    HighGodNameAlternatePossessive = vampirism_high_god_alternate_possessive
+
+    #Creator
+    CreatorName = vampirism_creator_god_name
+    CreatorNamePossessive = vampirism_creator_god_name_possessive
+    CreatorSheHe = CHARACTER_SHEHE_IT
+    CreatorHerHis = CHARACTER_HERHIS_ITS
+    CreatorHerHim = CHARACTER_HERHIM_IT
+
+    #HealthGod
+    HealthGodName = vampirism_health_god_name
+    HealthGodNamePossessive = vampirism_health_god_name_possessive
+    HealthGodSheHe = CHARACTER_SHEHE_HE
+    HealthGodHerHis = CHARACTER_HERHIS_HIS
+    HealthGodHerHim = CHARACTER_HERHIM_HIM
+    
+    #FertilityGod
+    FertilityGodName = vampirism_fertility_god_name
+    FertilityGodNamePossessive = vampirism_fertility_god_name_possessive
+    FertilityGodSheHe = CHARACTER_SHEHE_HE
+    FertilityGodHerHis = CHARACTER_HERHIS_HIS
+    FertilityGodHerHim = CHARACTER_HERHIM_HIM
+
+    #WealthGod
+    WealthGodName = vampirism_wealth_god_name
+    WealthGodNamePossessive = vampirism_wealth_god_name_possessive
+    WealthGodSheHe = CHARACTER_SHEHE_HE
+    WealthGodHerHis = CHARACTER_HERHIS_HIS
+    WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+    #HouseholdGod
+    HouseholdGodName = vampirism_household_god_name
+    HouseholdGodNamePossessive = vampirism_household_god_name_possessive
+    HouseholdGodSheHe = CHARACTER_SHEHE_HE
+    HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+    HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+    #FateGod
+    FateGodName = vampirism_fate_god_name
+    FateGodNamePossessive = vampirism_fate_god_name_possessive
+    FateGodSheHe = CHARACTER_SHEHE_IT
+    FateGodHerHis = CHARACTER_HERHIS_ITS
+    FateGodHerHim = CHARACTER_HERHIM_IT
+
+    #KnowledgeGod
+    KnowledgeGodName = vampirism_knowledge_god_name
+    KnowledgeGodNamePossessive = vampirism_knowledge_god_name_possessive
+    KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+    KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+    KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+    #WarGod
+    WarGodName = vampirism_war_god_name
+    WarGodNamePossessive = vampirism_war_god_name_possessive
+    WarGodSheHe = CHARACTER_SHEHE_HE
+    WarGodHerHis = CHARACTER_HERHIS_HIS
+    WarGodHerHim = CHARACTER_HERHIM_HIM
+
+    #TricksterGod
+    TricksterGodName = vampirism_trickster_god_name
+    TricksterGodNamePossessive = vampirism_trickster_god_name_possessive
+    TricksterGodSheHe = CHARACTER_SHEHE_SHE
+    TricksterGodHerHis = CHARACTER_HERHIS_HER
+    TricksterGodHerHim = CHARACTER_HERHIM_HER
+
+    #NightGod
+    NightGodName = vampirism_night_god_name
+    NightGodNamePossessive = vampirism_night_god_name_possessive
+    NightGodSheHe = CHARACTER_SHEHE_HE
+    NightGodHerHis = CHARACTER_HERHIS_HIS
+    NightGodHerHim = CHARACTER_HERHIM_HIM
+
+    #WaterGod
+    WaterGodName = vampirism_water_god_name
+    WaterGodNamePossessive = vampirism_water_god_name_possessive
+    WaterGodSheHe = CHARACTER_SHEHE_HE
+    WaterGodHerHis = CHARACTER_HERHIS_HIS
+    WaterGodHerHim = CHARACTER_HERHIM_HIM
+    
+    PantheonTerm = vampirism_samsara
+    PantheonTermHasHave = pantheon_term_has
+    GoodGodNames = {
+      vampirism_high_god_name
+      vampirism_high_god_alternate
+      vampirism_good_god_first_vampire
+      vampirism_good_god_elders
+    }
+    DevilName = vampirism_devil_name
+    DevilNamePossessive = vampirism_devil_name_possessive
+    DevilSheHe = CHARACTER_SHEHE_HE
+    DevilHerHis = CHARACTER_HERHIS_HER
+    DevilHerselfHimself = CHARACTER_HIMSELF
+    EvilGodNames = {
+      vampirism_devil_name
+    }
+    HouseOfWorship = vampirism_house_of_worship
+    HouseOfWorshipPlural = vampirism_house_of_worship_plural
+    ReligiousSymbol = vampirism_religious_symbol
+    ReligiousText = vampirism_religious_text
+    ReligiousHeadName = vampirism_religious_head_title
+    ReligiousHeadTitleName = vampirism_religious_head_title_name
+    DevoteeMale = vampirism_devotee_male
+    DevoteeMalePlural = vampirism_devotee_male_plural
+    DevoteeFemale = vampirism_devotee_female
+    DevoteeFemalePlural = vampirism_devotee_female_plural
+    DevoteeNeuter = vampirism_devotee_male
+    DevoteeNeuterPlural = vampirism_devotee_male_plural
+    PriestMale = vampirism_devotee_male
+    PriestMalePlural = vampirism_devotee_male_plural
+    PriestFemale = vampirism_devotee_female
+    PriestFemalePlural = vampirism_devotee_female_plural
+    PriestNeuter = vampirism_devotee_male
+    PriestNeuterPlural = vampirism_devotee_male_plural
+    AltPriestTermPlural = vampirism_alt_priest_term
+    BishopMale = vampirism_devotee_male
+    BishopMalePlural = vampirism_devotee_male_plural
+    BishopFemale = vampirism_devotee_female
+    BishopFemalePlural = vampirism_devotee_female_plural
+    BishopNeuter = vampirism_devotee_male
+    BishopNeuterPlural = vampirism_devotee_male_plural
+    DivineRealm = vampirism_divine_realm
+    PositiveAfterLife = vampirism_divine_realm
+    NegativeAfterLife = vampirism_negative_afterlife
+    DeathDeityName = vampirism_death_god_name
+    DeathDeityNamePossessive = vampirism_death_god_name_possessive
+    DeathDeitySheHe = CHARACTER_SHEHE_HE
+    DeathDeityHerHis = CHARACTER_HERHIS_HIS
+    WitchGodName = vampirism_witchgod_mara
+    WitchGodHerHis = CHARACTER_HERHIS_HIS
+    WitchGodSheHe = CHARACTER_SHEHE_HE
+    WitchGodHerHim = CHARACTER_HERHIM_HIM
+    WitchGodMistressMaster = master
+    WitchGodMotherFather = father
+
+    GHWName = ghw_purification
+    GHWNamePlural = ghw_purifications
+  }
+
+  faiths = {
+    sire = {
+      color = { 255 0 0 }
+      icon = donyipoloism
+      reformed_icon = donyipoloism
+      holy_site = transylvania
+      doctrine = tenet_human_sacrifice
+      doctrine = tenet_ancestor_worship
+      doctrine = tenet_supremacy
+      
+      doctrine = unreformed_faith_doctrine
+    }
+  }
+}

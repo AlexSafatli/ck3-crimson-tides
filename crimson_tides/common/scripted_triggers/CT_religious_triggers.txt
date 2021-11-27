@@ -1,0 +1,21 @@
+can_create_temporal_head_of_faith_title_trigger = {
+  OR = {
+    num_realm_holy_sites_faithful_holders = {
+      COUNT = holy_sites_to_create_temporal_head_of_faith
+      CHARACTER = ROOT
+    }
+    faith = {
+      has_doctrine = tenet_supremacy
+    }
+  }
+  root = { piety_level >= high_piety_level }
+  trigger_if = {
+    limit = {
+      root = { is_independent_ruler = no }
+    }
+    custom_description = {
+      text = cannot_create_hof_title_at_or_above_liege_tier
+      root.liege.primary_title.tier > tier_duchy
+    }
+  }
+}

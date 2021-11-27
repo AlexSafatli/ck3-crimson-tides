@@ -1,0 +1,106 @@
+doctrine_vampiric_core_tenets = {
+  group = "core_tenets"
+  tenet_human_feeding = {
+    icon = core_tenet_flagellant
+    piety_cost = {
+      if = {
+        limit = {
+          has_doctrine = pagan_hostility_doctrine
+        }
+        value = faith_tenet_cost_mid
+      }
+      else_if = {
+        limit = {
+          religion_tag = hinduism_religion
+        }
+        value = faith_tenet_cost_high
+      }
+      else = {
+        value = faith_tenet_cost_massive
+      }
+
+      # Multiplier for keeping same tenet
+      if = {
+        limit = { has_doctrine = tenet_human_feeding }
+        multiply = faith_unchanged_doctrine_cost_mult
+      }
+    }
+
+    is_shown = {
+      # No HumSac for Abrahamics: 'tis literally the religion-namer.
+      NOR = {
+        religion_tag = christianity_religion
+        religion_tag = judaism_religion
+        religion_tag = islam_religion
+      }
+    }
+
+    can_pick = {
+      custom_description = {
+        text = incompatible_tenet_pacifism_trigger
+        NOT = { flag:tenet_pacifism = { is_in_list = selected_doctrines } }
+      }
+      custom_description = {
+        text = incompatible_tenet_dharmic_pacifism_trigger
+        NOT = { flag:tenet_dharmic_pacifism = { is_in_list = selected_doctrines } }
+      }
+      custom_description = {
+        text = incompatible_tenet_gruesome_festivals_trigger
+        NOT = {
+          flag:tenet_gruesome_festivals = { is_in_list = selected_doctrines }
+        }
+      }
+    }
+
+    parameters = {
+      human_sacrifice_active = yes
+      blood_kiss_active = yes
+      flower_war_cb_active = yes
+    }
+  }
+  tenet_supremacy = {
+    icon = core_tenet_adorcism
+    piety_cost = {
+      if = {
+        limit = {
+          OR = {
+            religion_tag = islam_religion
+          }
+        }
+        value = faith_tenet_cost_high
+      }
+      else_if = {
+        limit = {
+          OR = {
+            religion_tag = dualism_religion
+            religion_tag = hinduism_religion
+            religion_tag = buddhism_religion
+            religion_tag = jainism_religion
+          }
+        }
+        value = faith_tenet_cost_low
+      }
+      else = {
+        value = faith_tenet_cost_mid
+      }
+
+      # Multiplier for keeping same tenet
+      if = {
+        limit = { has_doctrine = tenet_supremacy }
+        multiply = faith_unchanged_doctrine_cost_mult
+      }
+    }
+
+    is_shown = {
+      NOR = {
+        religion_tag = christianity_religion
+        religion_tag = judaism_religion
+        religion_tag = zoroastrianism_religion
+      }
+    }
+
+    parameters = {
+      supremacy_resistance_to_conversion = yes
+    }
+  }  
+}
