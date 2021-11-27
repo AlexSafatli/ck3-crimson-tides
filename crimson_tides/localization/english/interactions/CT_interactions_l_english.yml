@@ -1,3 +1,4 @@
 ﻿l_english:
  sire_interaction:0 "Give the Blood Kiss"
  sire_interaction_desc:0 "Turn [recipient.GetShortUIName] by biting [recipient.GetHerHim] and granting [recipient.GetHerHim] your blood, giving them [GetTrait('vampirism').GetName( GetNullCharacter )] and increasing your [stress|E]"
+ recently_fed:0 "[CHARACTER.GetName] has recently drank blood and is temporarily sated"

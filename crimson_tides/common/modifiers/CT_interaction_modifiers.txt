@@ -1,0 +1,14 @@
+blood_kiss_aftermath_modifier = {
+  icon = drink_negative
+  health = -1.25
+  stress_gain_mult = 0.25
+  prowess = -2
+  fertility = -0.1
+  stacking = yes
+}
+
+blood_drink_well_fed = {
+  icon = drink_positive
+  health = 0.5
+  stress_loss_mult = 0.25
+}

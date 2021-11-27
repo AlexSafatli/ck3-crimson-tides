@@ -9,7 +9,7 @@ vampirism = {
   random_creation = 0
   
   diplomacy = 3
-  attraction_opinion = 30
+  attraction_opinion = 15
 
   ai_rationality = dominant_positive_ai_value
 
