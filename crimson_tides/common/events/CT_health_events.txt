@@ -1,0 +1,445 @@
+#Cancer
+health.1007 = {
+  type = character_event
+  title = health.1007.t
+  desc = {
+    desc = health.1007.desc
+    triggered_desc = {
+      trigger = {
+        court_physician_available_trigger = yes
+        liege_picks_treatment_trigger = no
+      }
+      desc = health.1007.court_physician.desc
+    }
+  }
+  theme = healthcare
+  left_portrait = {
+    character = root
+    animation = sick
+  }
+  right_portrait = {
+    character = scope:physician
+    triggered_animation = {
+      trigger = { scope:physician = { health_event_is_worried_trigger = { CHARACTER = root } } }
+      animation = worry
+    }
+    triggered_animation = {
+      trigger = { scope:physician = { ai_rationality >= 0 } } #Don't look rational if you're not
+      animation = personality_rational
+    }
+    animation = idle
+  }
+
+  trigger = {
+    can_contract_disease_trigger = { DISEASE = cancer }
+  }
+
+  weight_multiplier = {
+    base = 1
+
+    #replace with racial equivalent calculations
+    modifier = { #Children almost never have it
+      age < root.age_25_racial_equivalent
+      factor = 0.1
+    }
+    modifier = { #Very uncommon before 30
+      age >= root.age_25_racial_equivalent
+      age < root.age_35_racial_equivalent
+      factor = 0.3
+    }
+    modifier = { #Increasingly common after 55
+      is_male = yes
+      age > age_50_racial_equivalent #Males have a higher risk later in life
+      factor = 3
+    }
+    modifier = { #Increasingly common after 55
+      age >= root.age_50_racial_equivalent
+      is_female = yes
+      factor = 2
+    }
+    modifier = { #Increasingly common after 65
+      age >= root.age_60_racial_equivalent
+      factor = 2
+    }
+    modifier = { #Increasingly common after 70
+      age >= root.age_70_racial_equivalent
+      factor = 2
+    }
+  }
+
+  immediate = {
+    play_music_cue = "mx_cue_illness"
+    save_court_physician_as_effect = { SCOPE_NAME = physician }
+    contract_disease_effect = { DISEASE = cancer TREATMENT_EVENT = no } #Adds the trait, sends event "health.2201" to those who care
+  }
+
+  ###NO COURT PHYSICIAN OPTIONS###
+  #Find physician
+  option = {
+    trigger = {
+      NOT = { exists = scope:physician }
+      is_landed = yes
+    }
+    name = health.3101.e
+    find_court_physician_effect = yes
+    ai_chance = { base = 5 }
+  }
+
+  #OK
+  option = {
+    trigger = {
+      trigger_if = {
+        limit = { exists = scope:physician }
+        liege_picks_treatment_trigger = yes
+      }
+      trigger_else = {
+        always = yes
+      }
+    }
+    name = health.1007.a
+    ai_chance = { base = 1 }
+  }
+
+  ###COURT PHYSICIAN OPTIONS###
+  #Safe treatment
+  option = {
+    trigger = {
+      exists = scope:physician
+      liege_picks_treatment_trigger = no
+    }
+    name = health.3101.a
+    safe_disease_treatment_effect = { PATIENT = root TREATMENT_PICKER = root }
+    ai_chance = { base = 10 }
+  }
+
+  #Risky treatment
+  option = {
+    trigger = {
+      exists = scope:physician
+      liege_picks_treatment_trigger = no
+    }
+    name = health.3101.b
+    risky_disease_treatment_effect = { PATIENT = root TREATMENT_PICKER = root }
+    ai_chance = { base = 1 }
+  }
+  
+  #Mystic treatment
+  option = {
+    trigger = {
+      court_physician_available_trigger = yes
+      liege_picks_treatment_trigger = no
+      scope:physician = { has_trait = lifestyle_mystic }
+    }
+    name = health.3101.c
+    mystic_disease_treatment_effect = { PATIENT = root TREATMENT_PICKER = root }
+    ai_chance = {
+      base = 0.5
+      modifier = {
+        add = -0.5
+        ai_zeal >= 0
+      }
+    }
+  }
+
+  #No treatment
+  option = {
+    trigger = {
+      exists = scope:physician
+      liege_picks_treatment_trigger = no
+    }
+    name = health.3101.d
+    no_disease_treatment_effect = yes
+    ai_chance = { base = 0 }
+  }
+}
+
+#Gout
+health.1003 = {
+  type = character_event
+  title = health.1003.t
+  desc = {
+    desc = health.1003.desc
+    triggered_desc = {
+      trigger = {
+        court_physician_available_trigger = yes
+        liege_picks_treatment_trigger = no
+      }
+      desc = health.1003.court_physician.desc
+    }
+  }
+  theme = healthcare
+  left_portrait = {
+    character = root
+    animation = sick
+  }
+  right_portrait = {
+    character = scope:physician
+    triggered_animation = {
+      trigger = { scope:physician = { health_event_is_worried_trigger = { CHARACTER = root } } }
+      animation = worry
+    }
+    triggered_animation = {
+      trigger = { scope:physician = { ai_rationality >= 0 } } #Don't look rational if you're not
+      animation = personality_rational
+    }
+    animation = idle
+  }
+
+  trigger = {
+    can_contract_disease_trigger = { DISEASE = gout_ridden }
+  }
+
+  weight_multiplier = {
+    base = 1
+    modifier = {
+      AND = {
+        is_female = yes
+        age < root.age_60_racial_equivalent
+      }
+      factor = 0.5
+    }
+    modifier = {
+      has_trait = gluttonous
+      factor = 1.2
+    }
+    modifier = {
+      has_trait = temperate
+      factor = 0.8
+    }
+    modifier = {
+      any_parent = {
+        has_trait = gout_ridden
+      }
+      factor = 1.5
+    }
+    modifier = {
+      health <= fine_health
+      factor = 1.1
+    }
+    modifier = {
+      health <= poor_health
+      factor = 1.1
+    }
+    modifier = {
+      is_adult = no
+      factor = 0.2
+    }
+    modifier = {
+      current_weight > 50
+      factor = 1.1
+    }
+    modifier = {
+      current_weight > 80
+      factor = 1.1
+    }
+  }
+
+  immediate = {
+    play_music_cue = "mx_cue_illness"
+    save_court_physician_as_effect = { SCOPE_NAME = physician }
+    contract_disease_effect = { DISEASE = gout_ridden TREATMENT_EVENT = no }
+  }
+
+  ###NO COURT PHYSICIAN OPTIONS###
+  #Find physician
+  option = {
+    trigger = {
+      NOT = { exists = scope:physician }
+      is_landed = yes
+    }
+    name = health.3101.e
+    find_court_physician_effect = yes
+    ai_chance = { base = 5 }
+  }
+
+  #OK
+  option = {
+    trigger = {
+      trigger_if = {
+        limit = { exists = scope:physician }
+        liege_picks_treatment_trigger = yes
+      }
+      trigger_else = {
+        always = yes
+      }
+    }
+    name = health.1003.a
+    ai_chance = { base = 1 }
+  }
+
+  ###COURT PHYSICIAN OPTIONS###
+  #Safe treatment
+  option = {
+    trigger = {
+      exists = scope:physician
+      liege_picks_treatment_trigger = no
+    }
+    name = health.3101.a
+    safe_disease_treatment_effect = { PATIENT = root TREATMENT_PICKER = root }
+    ai_chance = { base = 10 }
+  }
+
+  #Risky treatment
+  option = {
+    trigger = {
+      exists = scope:physician
+      liege_picks_treatment_trigger = no
+    }
+    name = health.3101.b
+    risky_disease_treatment_effect = { PATIENT = root TREATMENT_PICKER = root }
+    ai_chance = { base = 1 }
+  }
+  
+  #Mystic treatment
+  option = {
+    trigger = {
+      court_physician_available_trigger = yes
+      liege_picks_treatment_trigger = no
+      scope:physician = { has_trait = lifestyle_mystic }
+    }
+    name = health.3101.c
+    mystic_disease_treatment_effect = { PATIENT = root TREATMENT_PICKER = root }
+    ai_chance = {
+      base = 0.5
+      modifier = {
+        add = -0.5
+        ai_zeal >= 0
+      }
+    }
+  }
+
+  #No treatment
+  option = {
+    trigger = {
+      exists = scope:physician
+      liege_picks_treatment_trigger = no
+    }
+    name = health.3101.d
+    no_disease_treatment_effect = yes
+    ai_chance = { base = 0 }
+  }
+}
+
+#Infirm
+health.7000 = {
+  type = character_event
+  title = health.7000.t
+  desc = {
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          age <= root.age_40_racial_equivalent
+        }
+        desc = health.7000.desc_collapse
+      }
+      desc = health.7000.desc
+    }
+    desc = health.7000.desc_closing
+  }
+  left_portrait = {
+    character = root
+    animation = sick
+  }
+  theme = physical_health
+  trigger = {
+    NOT = { has_trait = infirm }
+    OR = {
+      #age >= 50
+      age >= root.age_50_racial_equivalent
+      AND = {
+        #age >= 30
+        age >= root.age_30_racial_equivalent
+        OR = {
+          has_trait = physique_bad
+          has_trait = spindly
+          has_trait = weak
+        }
+      }
+    }
+  }
+  weight_multiplier = {
+    base = 1
+    modifier = {
+      health >= good_health
+      factor = 0
+    }
+    modifier = {
+      health = fine_health
+      factor = 0.8
+    }
+    modifier = {
+      health <= poor_health
+      factor = 5
+    }
+    modifier = {
+      has_trait = physique_bad_2
+      factor = 1.2
+    }
+    modifier = {
+      has_trait = physique_bad_3
+      factor = 1.5
+    }
+    modifier = {
+      #age < 50
+      age < root.age_50_racial_equivalent
+      factor = 0.7
+    }
+    modifier = {
+      #age > 60
+      age > root.age_60_racial_equivalent
+      factor = 2
+    }
+    modifier = {
+      #age > 70
+      age > root.age_70_racial_equivalent
+      factor = 2
+    }
+    modifier = {
+      #age > 80
+      age > root.age_60_racial_equivalent
+      factor = 3
+    }
+    modifier = {
+      has_trait = athletic 
+      factor = 0.8
+    }
+    modifier = {
+      has_trait = whole_of_body 
+      factor = 0.5
+    }
+    modifier = {
+      has_trait = physique_good_1
+      factor = 0.8
+    }
+    modifier = {
+      has_trait = physique_good_2
+      factor = 0.5
+    }
+    modifier = {
+      has_trait = physique_good_3
+      factor = 0.3
+    }
+    modifier = {
+      has_serious_disease_trigger = yes
+      factor = 3
+    }
+    modifier = {
+      has_treatable_disease_trigger = yes
+      factor = 1.2
+    }
+  }
+  option = {
+    name = {
+      trigger = { has_trait = lazy }
+      text = health.7000.a.lazy
+    }
+    name = {
+      text = health.7000.a
+    }
+    add_trait = infirm
+    stress_impact = {
+      lazy = minor_stress_loss
+      diligent = medium_stress_gain
+    }
+  }
+}

@@ -1,0 +1,118 @@
+starting_prestige = {
+  value = {
+    add = {
+      value = medium_prestige_value
+      multiply = {
+        value = 0
+        if = {
+          limit = { age > 12}
+          add = 1
+        }
+        else_if = {
+          limit = {
+            age > root.age_24_racial_equivalent
+          }
+          add = 2
+        }
+        else_if = {
+          limit = {
+            age > root.age_36_racial_equivalent
+          }
+          add = 3
+        }
+        else_if = {
+          limit = {
+            age > root.age_48_racial_equivalent
+          }
+          add = 4
+        }
+        else_if = {
+          limit = {
+            age > root.age_60_racial_equivalent
+          }
+          add = 5
+        }
+        if = {
+          limit = {
+            OR = {
+              has_trait = arrogant
+              has_trait = ambitious
+              has_trait = vampirism
+            }
+          }
+          add = 1
+        }
+        else_if = {
+          limit = {
+            OR = {
+              has_trait = humble
+              has_trait = content
+            }
+          }
+          add = -1
+        }
+        min = 0
+      }
+    }
+    add = {
+      value = medium_prestige_value
+      multiply = highest_held_title_tier
+    }
+  }
+}
+
+starting_piety = {
+  value = {
+    add = {
+      value = medium_piety_value
+      multiply = {
+        add = num_virtuous_traits
+        subtract = num_sinful_traits
+        if = {
+          limit = { has_trait = zealous }
+          add = 1
+        }
+        else_if = {
+          limit = { has_trait = cynical }
+          add = -1
+        }
+      }
+      multiply = {
+        value = 0
+        if = {
+          limit = { age > 12 }
+          add = 1
+        }
+        else_if = {
+          limit = {
+            age > root.age_24_racial_equivalent
+          }
+          add = 2
+        }
+        else_if = {
+          limit = {
+            age > root.age_36_racial_equivalent
+          }
+          add = 3
+        }
+        else_if = {
+          limit = {
+            age > root.age_48_racial_equivalent
+          }
+          add = 4
+        }
+        else_if = {
+          limit = {
+            age > root.age_60_racial_equivalent
+          }
+          add = 5
+        }
+      }
+    }
+    add = {
+      value = minor_piety_value
+      multiply = highest_held_title_tier
+    }
+    min = minor_piety_value
+  }
+}

@@ -1,3 +1,7 @@
 sired_me_opinion = {
   opinion = 50
 }
+
+revered_vampire_lord_opinion = {
+  opinion = 25
+}

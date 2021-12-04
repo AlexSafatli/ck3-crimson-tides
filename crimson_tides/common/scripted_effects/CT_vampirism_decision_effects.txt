@@ -1,0 +1,31 @@
+embrace_immortality_decision_effect = {
+  custom_tooltip = faith_embrace_immortality
+  root = {
+    if = {
+      limit = {
+        any_vassal = {
+          is_ai = yes
+          dread_modified_ai_boldness = { #all vassals that are intimidated
+            dreaded_character = root
+            value <= -50
+          }
+        }
+      }
+      every_vassal = {
+        limit = {
+          is_ai = yes
+          dread_modified_ai_boldness = {
+            dreaded_character = root
+            value <= -50
+          }
+        }
+        add_opinion = {
+          modifier = revered_vampire_lord_opinion
+          target = root
+        }
+      }
+    }
+  }
+  add_trait = vampiric_immortality
+  give_nickname = nick_the_immortal
+}

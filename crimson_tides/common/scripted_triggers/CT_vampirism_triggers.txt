@@ -1,0 +1,7 @@
+race_has_400_year_lifespan = {
+  has_trait = vampirism
+}
+
+is_not_human = {
+  has_trait = vampirism
+}

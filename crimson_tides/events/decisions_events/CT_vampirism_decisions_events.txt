@@ -1,0 +1,44 @@
+namespace = ct_decision_major_events
+
+#Embrace immortality
+ct_decision_major_events.0001 = {
+  type = character_event
+  title = ct_decision_major_events.0001.t
+  desc = ct_decision_major_events.0001.desc
+  theme = physical_health
+  left_portrait = {
+    character = scope:vampire
+    animation = personality_greedy
+  }
+  right_portrait = {
+    character = scope:court_chaplain
+    animation = admiration
+  }
+  override_background = { event_background = feast }
+
+  immediate = {
+    play_music_cue = "mx_cue_meadandwine"
+    embrace_immortality_decision_effect = yes
+  }
+
+  option = {
+    name = ct_decision_major_events.0001.a
+  }
+}
+
+#Someone embraced immortality
+ct_decision_major_events.0002 = {
+  type = character_event
+  title = ct_decision_major_events.0002.t
+  desc = ct_decision_major_events.0002.desc
+  theme = physical_health
+  left_portrait = {
+    character = scope:vampire
+    animation = personality_greedy
+  }
+  override_background = { event_background = feast }
+
+  option = {
+    name = ct_decision_major_events.0002.a
+  }
+}

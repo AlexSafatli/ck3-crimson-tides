@@ -1,0 +1,8 @@
+﻿l_english:
+ ct_decision_major_events.0001.t:0 "Embraced Immortality"
+ ct_decision_major_events.0001.desc:0 ""The penultimate pinnacle of a vampire's might is to obtain true immortality," [court_chaplain.GetCouncilTitle] [court_chaplain.GetNamePossessive] voice rings out. "By accepting the gift of blood you also accept [ROOT.Char.GetFaith.HighGodHerHis|U] love."\n\nThe servants — the ones that are still with us — have done a marvelous job; we feast well into the night, growing drunk on [ROOT.Char.Custom('RegionalDrink')] and the taste of human blood."
+ ct_decision_major_events.0001.a:0 "Now all will fear my name."
+
+ ct_decision_major_events.0002.t:0 "Immortality Obtained"
+ ct_decision_major_events.0002.desc:0 "The vampire ruler [vampire.GetTitledFirstName] has embraced immortality."
+ ct_decision_major_events.0002.a:0 "I fear what is to come."

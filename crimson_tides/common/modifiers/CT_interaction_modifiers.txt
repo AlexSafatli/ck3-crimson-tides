@@ -12,3 +12,16 @@ blood_drink_well_fed = {
   health = 0.5
   stress_loss_mult = 0.25
 }
+
+newborn_vampire_modifier = {
+  icon = treatment_negative
+  health = -5.00
+  stress_gain_mult = 1.0
+  prowess = 2
+  fertility = -1.0
+  learning = -2
+  intrigue = -2
+  diplomacy = -2
+  martial = -2
+  stewardship = -2
+}

@@ -14,3 +14,44 @@ has_interesting_portrait_altering_trait_trigger = {
     has_trait = vampirism
   }
 }
+
+guest_physician_candidate_trigger = {
+  age < root.age_70_racial_equivalent
+  learning >= decent_skill_rating
+}
+
+guest_male_female_balance_trigger = {
+  is_adult = yes
+  age <= root.age_65_racial_equivalent
+  is_lowborn = no
+}
+
+can_start_single_combat_eligibility_checks_trigger = {
+  NOR = {
+    is_adult = no
+    AND = {
+      age >= root.age_70_racial_equivalent
+      prowess < 10
+    }
+  }
+  NOR = {
+    has_trait = pregnant
+    has_trait = incapable
+    has_trait = blind
+  }
+  has_contagious_deadly_disease_trigger = no
+}
+
+# Does the character have a trait with a notably beneficial special combat move?
+has_relevant_special_single_combat_trait_trigger = {
+  OR = {
+    has_trait = lifestyle_blademaster
+    has_trait = lifestyle_hunter
+    has_trait = berserker
+    has_trait = shieldmaiden
+    has_trait = varangian
+    has_trait = deviant
+    has_trait = viking
+    has_trait = vampirism
+  }
+}

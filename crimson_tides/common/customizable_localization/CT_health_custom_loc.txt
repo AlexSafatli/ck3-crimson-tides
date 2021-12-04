@@ -1,0 +1,22 @@
+GetYoungMiddleAgedOld = {
+  type = character
+  text = {
+    trigger = {
+      age <= root.age_30_racial_equivalent
+    }
+    localization_key = age_young
+  }
+  text = {
+    trigger = {
+      age > root.age_30_racial_equivalent
+      age < root.age_60_racial_equivalent
+    }
+    localization_key = age_middle_aged
+  }
+  text = {
+    trigger = {
+      age >= root.age_60_racial_equivalent
+    }
+    localization_key = age_old
+  }
+}

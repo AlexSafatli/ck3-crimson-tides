@@ -1,0 +1,8 @@
+death_old_age = {
+  natural = yes
+  natural_death_trigger = {
+    age >= root.age_60_racial_equivalent
+  }
+  priority = 10
+  icon = "death_natural.dds"
+}

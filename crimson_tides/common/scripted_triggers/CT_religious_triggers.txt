@@ -1,13 +1,4 @@
 can_create_temporal_head_of_faith_title_trigger = {
-  OR = {
-    num_realm_holy_sites_faithful_holders = {
-      COUNT = holy_sites_to_create_temporal_head_of_faith
-      CHARACTER = ROOT
-    }
-    faith = {
-      has_doctrine = tenet_supremacy
-    }
-  }
   root = { piety_level >= high_piety_level }
   trigger_if = {
     limit = {
@@ -17,5 +8,55 @@ can_create_temporal_head_of_faith_title_trigger = {
       text = cannot_create_hof_title_at_or_above_liege_tier
       root.liege.primary_title.tier > tier_duchy
     }
+  }
+  trigger_else_if = {
+    limit = {
+      root = {
+        NOT = {
+          faith = {
+            has_doctrine = tenet_supremacy
+          }
+        }
+      }
+    }
+    num_realm_holy_sites_faithful_holders = {
+      COUNT = holy_sites_to_create_temporal_head_of_faith
+      CHARACTER = ROOT
+    }    
+  }
+}
+
+can_afford_create_head_of_faith_title_cost_trigger = {
+  trigger_if = {
+    limit = {
+      faith = {
+        has_doctrine_parameter = temporal_head_of_faith
+        OR = {
+          has_doctrine = muhammad_succession_sunni_doctrine
+          has_doctrine = muhammad_succession_shia_doctrine
+          has_doctrine = tenet_supremacy
+        }
+      }   
+    }
+    trigger_if = {
+      limit = { NOT = { has_trait = sayyid } }
+      piety >= massive_piety_value
+    }
+  }
+  trigger_else_if = {
+    limit = {
+      faith = {
+        has_doctrine_parameter = temporal_head_of_faith
+      }
+    }
+    piety >= major_piety_value
+  }
+  trigger_else = {
+    limit = {
+      faith = {
+        has_doctrine_parameter = spiritual_head_of_faith
+      }
+    }
+    gold >= medium_gold_max_value
   }
 }

@@ -1,0 +1,7 @@
+﻿l_english:
+ embrace_immortality_decision:0 "Embrace Immortality"
+ embrace_immortality_decision_desc:1 "Few besides [ROOT.Char.GetFaith.CreatorName] were able to obtain immortality. By imbibing the blood that is the true reflection of the divine we grow closer to [ROOT.Char.GetFaith.HighGodNameAlternate] and become everlasting. Now that you have established a foothold in your small corner of the world and a large following, you can order the search for the source of immortality at a heavy cost of resources."
+ all_my_intimidated_vassals:1 "All your [intimidated|E] vassals"
+ embrace_immortality_decision_confirm:0 "Become divine."
+ embrace_immortality_decision_tooltip:1 "Obtain true immortality and become immune to the effects of aging"
+ faith_embrace_immortality:0 "You become immune to the effects of aging and become a paragon of vampires"

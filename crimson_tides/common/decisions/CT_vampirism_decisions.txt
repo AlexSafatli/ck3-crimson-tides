@@ -1,0 +1,72 @@
+embrace_immortality_decision = {
+  picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+  desc = embrace_immortality_decision_desc
+  selection_tooltip = embrace_immortality_decision_tooltip
+  major = yes
+
+  is_shown = {
+    AND = {
+      faith = faith:sire
+      has_trait = vampirism
+    }
+    NOT = {
+      has_trait = vampiric_immortality
+    }
+  }
+
+  is_valid = {
+    trigger_if = {
+      limit = {
+        exists = faith.religious_head
+      }
+      faith.religious_head = {
+        opinion = {
+          target = root
+          value >= 40
+        }
+      }
+    }
+    prestige_level >= max_prestige_level
+    piety_level >= max_piety_level
+  }
+
+  is_valid_showing_failures_only = {
+    is_ruler = yes
+    is_available_adult = yes
+  }
+
+  cost = {
+    gold = 1000
+    prestige = monumental_prestige_value
+    piety = massive_piety_value
+  }
+
+  effect = {
+    save_scope_as = vampire
+    root.cp:councillor_court_chaplain = {
+      save_scope_as = court_chaplain
+    }
+    show_as_tooltip = {
+      embrace_immortality_decision_effect = yes
+    }
+
+    trigger_event = ct_decision_major_events.0001
+    every_player = {
+      limit = {
+        NOT = { this = root }
+        faith = root.faith
+      }
+      trigger_event = ct_decision_major_events.0002
+    }    
+  }
+
+  ai_check_interval = 240
+  
+  ai_potential = {
+    always = yes
+  }
+
+  ai_will_do = {
+    base = 100
+  }
+}

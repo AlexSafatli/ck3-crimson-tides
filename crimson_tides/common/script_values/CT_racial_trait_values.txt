@@ -1,0 +1,127 @@
+calculate_age_ratio = {
+  value = 0
+  if = {
+    limit = {
+      race_has_400_year_lifespan = yes  # vampires
+    }
+    add = 400
+  }
+  else = {
+    add = 80  # default
+  }
+  divide = 80
+}
+
+age_20_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 20
+  round = yes
+}
+
+age_24_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 24
+  round = yes
+}
+
+age_25_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 25
+  round = yes
+}
+
+age_29_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 29
+  round = yes
+}
+
+age_30_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 30
+  round = yes
+}
+
+age_33_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 33
+  round = yes
+}
+
+age_35_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 35
+  round = yes
+}
+
+age_36_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 36
+  round = yes
+}
+
+age_40_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 40
+  round = yes
+}
+
+age_45_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 45
+  round = yes
+}
+
+age_48_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 48
+  round = yes
+}
+
+age_50_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 50
+  round = yes
+}
+
+age_55_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 55
+  round = yes
+}
+
+age_60_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 60
+  round = yes
+}
+
+age_65_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 65
+  round = yes
+}
+
+age_70_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 70
+  round = yes
+}
+
+age_80_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 80
+  round = yes
+}
+
+age_90_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 90
+  round = yes
+}
+
+age_100_racial_equivalent = {
+  value = calculate_age_ratio
+  multiply = 100
+  round = yes
+}
